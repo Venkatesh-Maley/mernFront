@@ -9,7 +9,7 @@ const App = () => {
   // Fetch tasks using GraphQL
   useEffect(() => {
     axios
-      .post('http://localhost:5000/graphql', {
+      .post('https://mernback-au6b.onrender.com/graphql', {
         query: `
           query {
             getTasks {
@@ -28,7 +28,7 @@ const App = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:5000/graphql', {
+      .post('https://mernback-au6b.onrender.com/graphql', {
         query: `
           mutation {
             addTask(todo: "${newTask}") {
@@ -46,7 +46,7 @@ const App = () => {
   // Delete task using GraphQL
   const deleteHandler = (id) => {
     axios
-      .post('http://localhost:5000/graphql', {
+      .post('https://mernback-au6b.onrender.com/graphql', {
         query: `
           mutation {
             deleteTask(id: "${id}") {
